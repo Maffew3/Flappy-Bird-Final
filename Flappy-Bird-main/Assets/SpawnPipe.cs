@@ -24,7 +24,7 @@ public class SpawnPipe : MonoBehaviour
     }
     private void SpawnPipes()
     {
-        Vector3 spawnPos = new Vector3(0, Random.Range(-2, 4));
+        Vector3 spawnPos = new Vector3(0, Random.Range(-14, 25));
         GameObject pipe = Instantiate(pipe1, spawnPos, Quaternion.identity);
         Destroy(pipe, 10f);
     }

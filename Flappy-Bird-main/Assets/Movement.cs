@@ -5,6 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody2D rb;
+    float acceleration = .3f;
+    public AudioSource jump;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,9 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rb.velocity = Vector2.up * 26f;
+            rb.velocity = Vector2.up * 130f;
+            transform.rotation = Quaternion.Euler(0, 0, rb.velocity.y * acceleration);
+            jump.Play();
         }
     }
 }
